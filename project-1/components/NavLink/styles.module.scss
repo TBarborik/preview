@@ -1,0 +1,52 @@
+.nav-link a {
+  @apply text-neutral-900 font-medium py-1 px-2 h-full inline-flex items-center underline decoration-2 gap-x-2;
+  text-decoration-color: transparent;
+
+  @media (hover: hover) {
+	&:hover:not([disabled]) {
+	  @apply text-primary-800;
+
+	  text-shadow: none;
+	  text-decoration-color: theme("colors.primary.800");
+	}
+  }
+
+  &:active:not([disabled]) {
+	@apply text-primary-900;
+	text-decoration-color: theme("colors.primary.900");
+  }
+}
+
+.nav-link:has(> ul) {
+  @apply relative;
+
+  > a::after {
+	@apply content-[""] w-6 h-6 transition-transform duration-300;
+	background: url("/icons/chevron-down.svg") no-repeat center;
+  }
+
+  &.opened {
+	> a::after {
+	  @apply -rotate-180
+	}
+  }
+}
+
+.nav-link.nav-link-white a {
+  @apply text-white;
+
+
+  @media (hover: hover) {
+	&:hover:not([disabled]) {
+	  @apply text-primary-300;
+
+	  text-shadow: none;
+	  text-decoration-color: theme("colors.primary.300");
+	}
+  }
+
+  &:active:not([disabled]) {
+	@apply text-white;
+	text-decoration-color: white;
+  }
+}

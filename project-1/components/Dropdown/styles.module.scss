@@ -1,0 +1,22 @@
+.dropdown {
+  @apply z-50 pointer-events-none h-0 overflow-y-hidden pl-5 flex gap-y-2 flex-col;
+  @apply md:absolute md:p-2 md:opacity-0 md:left-0 md:bottom-0 md:translate-y-full md:min-w-60 md:shadow-md md:rounded-lg md:duration-300 md:transition-opacity md:h-auto md:bg-white md:border-1 md:border-solid md:border-primary-100;
+
+  li[class=""] a, li:not([class]) {
+	@apply text-sm px-4 py-2 no-underline;
+
+	@media (hover: hover) {
+	  &:hover:not([disabled]) {
+		@apply text-white bg-primary-700
+	  }
+	}
+  }
+
+  li {
+  }
+
+  &-opened {
+	@apply opacity-100 pointer-events-auto h-auto pt-1;
+	@apply md:pt-2;
+  }
+}
